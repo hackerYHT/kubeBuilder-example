@@ -1,0 +1,31 @@
+# permissions for end users to edit podsbooks.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: podsbook-editor-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: kubebuilder-example
+    app.kubernetes.io/part-of: kubebuilder-example
+    app.kubernetes.io/managed-by: kustomize
+  name: podsbook-editor-role
+rules:
+- apiGroups:
+  - apps.ppdapi.com
+  resources:
+  - podsbooks
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - apps.ppdapi.com
+  resources:
+  - podsbooks/status
+  verbs:
+  - get

@@ -1,0 +1,27 @@
+# permissions for end users to view podsbooks.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: podsbook-viewer-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: kubebuilder-example
+    app.kubernetes.io/part-of: kubebuilder-example
+    app.kubernetes.io/managed-by: kustomize
+  name: podsbook-viewer-role
+rules:
+- apiGroups:
+  - apps.ppdapi.com
+  resources:
+  - podsbooks
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apps.ppdapi.com
+  resources:
+  - podsbooks/status
+  verbs:
+  - get

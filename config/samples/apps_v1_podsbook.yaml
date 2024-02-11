@@ -1,0 +1,12 @@
+apiVersion: apps.ppdapi.com/v1
+kind: Podsbook
+metadata:
+  labels:
+    app.kubernetes.io/name: podsbook
+    app.kubernetes.io/instance: podsbook-sample
+    app.kubernetes.io/part-of: kubebuilder-example
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: kubebuilder-example
+  name: podsbook-sample
+spec:
+  # TODO(user): Add fields here
