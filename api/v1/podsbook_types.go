@@ -28,18 +28,24 @@ type PodsbookSpec struct {
 	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
 
-	// Foo is an example field of Podsbook. Edit podsbook_types.go to remove/update
-	Foo string `json:"foo,omitempty"`
+	// Image,Replica is an example field of Podsbook. Edit podsbook_types.go to remove/update
+	Image   *string `json:"image,omitempty"`
+	Replica *int32  `json:"replica,omitempty"`
 }
 
 // PodsbookStatus defines the observed state of Podsbook
 type PodsbookStatus struct {
 	// INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
+
+	// INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
+	// Important: Run "make" to regenerate code after modifying this file
+	RealReplica int32 `json:"realReplica,omitempty"`
 }
 
 //+kubebuilder:object:root=true
 //+kubebuilder:subresource:status
+//+kubebuilder:printcolumn:JSONPath=".status.realReplica",name=RealReplica,type=integer
 
 // Podsbook is the Schema for the podsbooks API
 type Podsbook struct {

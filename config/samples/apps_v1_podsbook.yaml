@@ -10,3 +10,5 @@ metadata:
   name: podsbook-sample
 spec:
   # TODO(user): Add fields here
+  image: nginx:alpine
+  replica: 2
