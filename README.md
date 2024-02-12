@@ -14,3 +14,5 @@ make manifests
 [参考链接1](https://www.cnblogs.com/alisystemsoftware/p/11580202.html)
 
 [参考链接2](https://podsbook.com/posts/kubernetes/operator/#创建一个operator项目)
+
+[官方快速入门](https://book.kubebuilder.io/getting-started)
